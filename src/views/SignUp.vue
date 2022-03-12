@@ -50,9 +50,13 @@
 export default {
   data() {
     return {
-      username: null,
+      ID:null,
+      name: null,
       email: null,
+      phone: null,
+      age:null,
       password: null,
+      city:null,
       sex: null
     };
   },
@@ -63,11 +67,16 @@ export default {
     },
     signUp() {
       let a = {
-        email: this.email,
+        nationalID:this.ID,
+        email:this.email,
+        name:this.name,
         password: this.password,
-        name: this.username
+        city: this.city,
+        age: this.age,
+        phone: this.phone,
+        sex: this.sex
       };
-      fetch("http://localhost:8085//SignUp", {
+      fetch("http://localhost:8085/SignUp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -86,12 +95,7 @@ export default {
         });
     },
     checkemail() {
-      var res = this.email.split("@");
-      if (res[1] != "fray.com") {
-        alert("Enter the email as the form:\nexample@fray.com");
-      } else {
         this.signUp();
-      }
     }
   }
 };

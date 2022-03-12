@@ -27,21 +27,20 @@
 export default {
   data() {
     return {
-      email: null,
+      ID: null,
       password: null
     };
   },
   methods: {
     submit() {
-      var res = this.email.split("@");
-      this.$router.push("/view?email=" + res[0]);
+      this.$router.push("/view?id="+this.ID);
     },
     signIn() {
       let a = {
-        email: this.email,
-        password: this.password
+        id: this.ID,
+        pass: this.password
       };
-      fetch("http://localhost:8085//SignIn", {
+      fetch("http://localhost:8085/SignIn", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -59,12 +58,12 @@ export default {
         });
     },
     checkemail() {
-      var res = this.email.split("@");
-      if (res[1] != "fray.com") {
-        alert("Enter the email as the form:\nexample@fray.com");
-      } else {
+     // var res = this.email.split("@");
+     // if (res[1] != "fray.com") {
+      //  alert("Enter the email as the form:\nexample@fray.com");
+      //} else {
         this.signIn();
-      }
+     // }
     }
   }
 };

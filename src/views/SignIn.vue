@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     submit() {
-      this.$router.push("/view?id="+this.ID);
+      this.$router.push("/apply?id="+this.ID);
     },
     signIn() {
       let a = {

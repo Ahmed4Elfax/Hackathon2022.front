@@ -77,7 +77,7 @@ export default {
 };
 </script> 
 
-<style lang="scss">
+<style lang="scss" scoped>
 .contianer {
   width: 350px;
   border: 3px solid #73AD21;

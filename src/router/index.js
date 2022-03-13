@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import SignUp from "../views/SignUp.vue";
 import SignIn from "../views/SignIn.vue";
 import Apply from "../views/Apply.vue";
+import Result from "../views/Result.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/apply",
     name: "Apply",
     component: Apply
+  },
+  {
+    path: "/result",
+    name: "Result",
+    component: Result
   }
 ];
 

@@ -62,8 +62,7 @@ export default {
   },
   methods: {
     submit() {
-      var res = this.email.split("@");
-      this.$router.push("/view?email=" + res[0]);
+      this.$router.push("/apply?id=" + this.ID);
     },
     signUp() {
       let a = {
